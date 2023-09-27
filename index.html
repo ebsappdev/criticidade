@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+
+
+
+
+</head>
+<body>
+
+    <div class="overlay" id="overlay">
+        <div class="dialogo" id="dialogo">
+
+            <img id="fechar" src="img/fechar.svg" alt="fechar">
+                
+            <div class="identificador">
+                <label for="campo-identificador">Identificação do item a ser avaliado:</label>
+                <input type="search" name="campo-identificador" id="campo-identificador-1" placeholder="Ex: Apontamento 6615.AD001">
+            </div>
+
+            <div class="identificador">
+                <label for="campo-descricao">Descrição do item:</label>
+                <textarea rows="10" cols="50" name="campo-identificador" id="campo-identificador-2" placeholder="Ex: Deficiências identificadas nos processos de x, y, z..."></textarea>
+            </div>
+
+            <button onclick="insereIdentificador()" id="btn-salvar">Salvar</button>
+        </div>
+    </div>
+
+    <div class="formulario">
+        <h1 style="text-align: center; padding-bottom: 20px;">Nível de Criticidade</h1>
+        
+        <div class="editar">
+            <span style="font-weight: bold; color: #111;">IDENTIFICAÇÃO</span>
+            <div id="editar">
+                <span style="color: #a2a5bb">Editar</span>
+                <span style="line-height: 0; margin-left: 3px;"><img src="img/editar.svg" alt="editar"></span>
+            </div>
+        </div>
+
+        <div class="detalhes">
+            <div class="identificador">
+                <label for="campo-identificador-visualizacao">Item:</label>
+                <p style="opacity: 0.2; font-style: italic; margin-left: 15px;" id="campo-identificador-visualizacao">preencha este campo</p>
+            </div>
+
+            <div class="identificador">
+                <label for="campo-descricao-visualizacao">Descrição:</label>
+                <p style="opacity: 0.2; font-style: italic; margin-left: 15px;" id="campo-descricao-visualizacao">preencha este campo</p>
+            </div>
+        </div>
+
+        <div class="editar" style="margin-top: 40px;"><span style="font-weight: bold; color: #111;">QUESTIONÁRIO</span></div>  
+
+        <form action="#" method="post" onsubmit="getRespostas(event)">
+
+            <h4 class="comando">Risco financeiro:</h4>
+            <div class="respostas">
+                <div class="opcao">
+                    <input type="radio" name="pergunta1" id="pergunta1_opcao1" value="1"> Sem possibilidade de aplicação de sanções e/ou aplicação de multas;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta1" id="pergunta1_opcao2" value="2"> Possibilidade de aplicação de sanções de advertência por parte dos Órgãos Reguladores e/ou multas de até 0,2 % do lucro líquido do período;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta1" id="pergunta1_opcao3" value="3"> Possibilidade de aplicação de sanções relevantes por parte dos Órgãos Reguladores e/ou multas > 0,2 % a < 3,9% do lucro líquido do período;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta1" id="pergunta1_opcao4" value="4"> Possibilidade de aplicação de sanções gravíssimas por parte dos Órgãos Reguladores (como restrições na oferta de produtos ou serviços, perdas de licenças e possível cassação da autorização de funcionamento da Instituição) e/ou responsabilização criminal e/ou possibilidade de aplicação de multas > 4% do lucro líquido do período.
+                </div>
+            </div>
+
+            <h4 class="comando">Risco de imagem e reputação:</h4>
+
+            <div class="respostas">
+                <div class="opcao">
+                    <input type="radio" name="pergunta2" id="pergunta2_opcao1" value="1"> Sem repercussão envolvendo a imagem da instituição e/ou parceiros ou possibilidade de repercussão limitada no ambiente organizacional, facilmente remediada;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta2" id="pergunta2_opcao2" value="2"> Possibilidade de impacto na imagem da instituição, com repercussão externa que pode provocar menção midiática regional, causando empecilhos à concretização de negócios;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta2" id="pergunta2_opcao3" value="3"> Possibilidade de repercussão externa e menção midiática regional e nacional relevante, causando danos à imagem e reputação que dificulta ou impede a geração de negócios na Instituição;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta2" id="pergunta2_opcao4" value="4"> Possibilidade de repercussão externa e menção midiática nacional e internacional, causando danos extensos e duradouros à reputação da instituição financeira, afetando a confiança de clientes e investidores instituição.
+                </div>
+            </div>
+
+            <h4 class="comando">Risco operacional:</h4>
+
+            <div class="respostas">
+                <div class="opcao">
+                    <input type="radio" name="pergunta3" id="pergunta3_opcao1" value="1"> A situação não impacta outros processos e não compromete os negócios da instituição;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta3" id="pergunta3_opcao2" value="2"> A situação pode ocasionar a falta de controle gerencial dos processos e/ou o não cumprimento das metas, impactando os negócios da instituição;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta3" id="pergunta3_opcao3" value="3"> A situação impacta processos críticos para o negócio e pode ocasionar interrupções temporárias de operações/atividades, afetando o cliente interno e externo;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta3" id="pergunta3_opcao4" value="4"> A situação impacta processos críticos para o negócio e pode ocasionar interrupções significativas de operações/atividades, atingindo fortemente o cliente interno e externo e representando uma ameaça à continuidade dos negócios;
+                </div>
+            </div>
+
+            <h4 class="comando">Risco socioambiental:</h4>
+
+            <div class="respostas">
+                <div class="opcao">
+                    <input type="radio" name="pergunta4" id="pergunta4_opcao1" value="1"> Possibilidade de impactos socioambientais irrelevantes ou de menor lesividade, sem repercussão negativa da imagem da instituição;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta4" id="pergunta4_opcao2" value="2"> Possibilidade de impacto socioambiental controlável, com repercussão em mídia local e/ou multa de menor proporção;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta4" id="pergunta4_opcao3" value="3"> Possibilidade de impactos socioambientais relevantes, com repercussão a nível nacional e/ou aplicações de multas ou sanções de proporções graves;
+                </div>
+                <div class="opcao">
+                    <input type="radio" name="pergunta4" id="pergunta4_opcao4" value="4"> Possibilidade de danos socioambientais gravíssimos, com repercussão midiática nacional e até internacional, sujeito a multas e sanções de proporções gravíssimas, que comprometerão o alcance dos objetivos estratégicos.
+                </div>
+            </div>
+
+            <input id="enviar" type="submit" value="Enviar">
+        </form>
+    </div>
+
+    <div id="resultado" class="formulario">
+        <h1 style="text-align: center; padding-bottom: 20px;">Resultado</h1>
+        <div class="indicador">
+            <img id="indicador-img" src="img/nivel/1.svg">
+            <h2 style="text-align: center;" id="risco-name">RISCO BAIXO</h2>
+        </div>
+        <div class="exportar">
+            <button onclick="gerarPDF()" id="exportar">Exportar <img style="margin-left: 10px;" src="img/pdf.svg" alt="PDF"></button>
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0/html2canvas.min.js"></script>
+    <script src="js/genpdf.js"></script>
+
+</body>
+</html>

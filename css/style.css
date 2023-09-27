@@ -1,0 +1,200 @@
+body{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Helvetica, sans-serif;
+
+    background: linear-gradient(45deg, #3A006F, #5500dd);
+    min-height: 100vh;
+}
+
+.editar {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+#editar{
+    font-weight: lighter;
+    opacity: .6;
+    cursor: pointer;
+}
+
+#editar:hover {
+    opacity: 1;
+}
+
+
+.editar img {
+    width: 16px;
+}
+
+.detalhes {
+    border-top: 2px solid #5500dd;
+    padding-left: 10px;
+}
+
+.formulario {
+    flex-direction: column;
+    background-color: #fafafa;
+    margin-top: 5%; 
+    padding: 5%;
+    border: 2px solid #3a006f;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px #1d0137;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid #5500dd;
+    padding: 5px;
+    text-align: justify;
+}
+
+
+form label {
+    line-height: 15px;
+}
+
+.respostas {
+    display: flex;
+    flex-direction: column;
+}
+
+.comando {
+    line-height: 0;
+    margin-top: 40px;
+}
+
+.opcao {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.opcao input {
+    margin-right: 15px;
+    border: 1px solid #5500dd;
+}
+
+
+
+
+
+/*** Dialogo ***/
+.overlay {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: #0c0018ec;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialogo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 700px;
+    background: #fbfbfb;
+    padding: 3%;
+    padding-top: 60px;
+    border-radius: 15px;
+}
+
+.identificador {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.identificador label {
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: #3a006f;
+}
+
+.identificador input, .identificador textarea  {
+    padding: 12px;
+    font-size: 18px;
+    font-family: Helvetica, sans-serif;
+}
+
+.dialogo img {
+    position: absolute;
+    top: 20px;
+    right: 3%;
+    cursor: pointer;
+}
+
+#btn-salvar, #enviar, #exportar {
+    color: #fff;
+    margin-top: 20px;
+    margin-left: auto;
+    padding: 8px 25px;
+    font-weight: 700;
+    background: #3a006f;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 3px #1d003894;
+    cursor: pointer;
+
+}
+
+#enviar {
+    display: flex;
+    margin: 20px auto;
+}
+
+#btn-salvar:active, #enviar:active {
+    color: #f1f1f1;
+    background: #2f0755;
+}
+
+
+/*Resultado*/
+
+#resultado {
+    display: flex;
+}
+
+.indicador {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.indicador img {
+    display: flex;
+    width: 100%;
+}
+
+.exportar {
+    margin-top: 100px;
+}
+
+#exportar {
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    margin: 10px auto;
+    cursor: pointer;
+}
